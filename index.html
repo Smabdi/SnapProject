@@ -1,39 +1,71 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles">
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakariye's Bookstore</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
-    </header>
-    <div id="card-container">
-        
+
+<!-- Header -->
+<div class="header">
+    <h1 class="welcome-header">Welcome to the Bookstore</h1>
+
+    <!-- buttons for the genres -->
+    <nav class="navbar">
+        <button onclick="filterGenre('all')">All</button>
+        <button onclick="filterGenre('fantasy')">Fantasy</button>
+        <button onclick="filterGenre('historical')">Historical</button>
+        <button onclick="filterGenre('mystery')">Mystery</button>
+        <button onclick="filterGenre('nonfiction')">Nonfiction</button>
+        <button onclick="filterGenre('romance')">Romance</button>
+        <button onclick="filterGenre('sci-fi')">Sci-Fi</button>
+        <button onclick="filterGenre('thriller')">Thriller</button>
+    </nav>
+
+    <!-- I was unable to figure out how to put the logo image to the left while the 'Welcome to the Bookstore' text in the center, so i made a nav for it. -->
+    <nav id="logo"> 
+        <img src="images/logo.png" alt="Logo" style="width: 300px; height: auto;"> <!-- The book logo is from https://www.cleanpng.com/png-vector-graphics-book-stock-illustration-logo-resea-7183477/ -->
+    </nav>
+
+    <!-- button to call for the cart modal -->
+    <button id="cartButton" onclick="toggleCart()">Cart</button>
+
+    <!-- Creates the search bar. To update the searching realtime as you type letter by letter, I found the information on W3Schools, as I wasn't sure what it was.  -->
+    <input type="text" id="searchInput" placeholder="Search for a book" onkeyup="searchBooks()">
+
+    <!-- This section defines the sorting drop down menu and the options in it -->
+    <select id="sortSelect" onchange="sortBooks()">
+    <option value="sorting">Sorting</option>
+    <option value="alphabetical">Alphabetical</option>
+    <option value="priceLowHigh">Price Low to High</option>
+    <option value="priceHighLow">Price High to Low</option>
+    </select>
+
+</div>
+
+<!-- This part is for the cart modal and anything related to the cart. -->
+<div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+        <span class="close-btn" onclick="toggleCart()" align="right">&times;</span>
+        <h1 align="center">Your Cart</h1>
+        <div id="cartItems"></div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
     </div>
-    <div class="card" style="display: none;">
-        <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
-    </div>
+</div>
+
+<!-- This is for the books. The html for the books is defined in the script js file -->
+<div class="book-container" id="bookContainer"></div>
+
+<!-- script file containing javascript -->
+<script src="scripts.js"></script>
 </body>
+
+<!-- Footer -->
+<footer align=center>
+<h1>Can't find a book you like?</h1>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdOqQNQTtOp5t4vBlh8FOEY1xpgcSLhdl_Q6SnocUYkY3HrMQ/viewform?usp=sf_link">Click here</a> to suggest more books</p> <!-- Go ahead and try it -->
+</footer>
 
 </html>

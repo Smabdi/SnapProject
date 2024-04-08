@@ -1,70 +1,177 @@
-html,
+/* Only font and color is set for background */
 body {
-    margin: 0;
-    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F5E9D0;
 }
-
-.main-header {
-    background-color: rgba(0, 0, 0, .3);
-    padding-bottom: 10px;
-}
-
-.title {
-    text-align: center;
-    margin: 0;
-    font-size: 8em;
-    font-family: "Helvetica";
-    font-weight: normal;
-    color: white;
-}
-
-#card-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-}
-
-.card {
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 5px;
-}
-
-.card-content {
+/* added padded and height to footer so the text isn't too close to the top */
+footer {
     padding: 20px;
-    font-family: "Verdana";
-    color: #777;
+    font-family: Arial;
+    background-color: #808F5E;
+    height: 100px;
+}
+/* Footer and header same color so that they can match */
+.header {
+    font-family: Arial;
+    background-color: #808F5E;
+    padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
-.card-content h2 {
-    margin-top: 0;
-    font-size: 20px;
+/* I am importing this font because I like the look of it and how much it stands out. The credit for this font goes to google. Plus, the way to import it, I learnt it from W3schools. */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+.welcome-header {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700; /* This is for bold text */
+  font-size: 48px; /* Adjust the size as needed */
+  text-align: center;
+  margin: 20px 0; /* Adjust the margin as needed */
 }
 
-.card img {
+/* Setting the margin top to -130px so that it aligns with the title of the page */
+#logo {
+    padding: 8px;
+    margin-top: -130px;
+    margin-left: 0px;
+    float: left;
+
+}
+
+/* the countainer sets up a flex layout for each book card. This will be used to align the inside of the card nicely */
+.book-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    justify-content: flex-start; /* Aligns cards to the start of the container */
+    gap: 20px; /* spreading the cards nicely so that there ar 5 cards per row */
+}
+
+/* This is where each book card i styled, so that it looks appeasing to look at */
+.book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push the button to the bottom */
+    height: auto; /* makes sure to stretch the card vertically right */
+    width: 290px;
+    padding: 10px;
+    margin: 25px; /* Adjust or remove based on your design */
+    text-align: center;
+    background-color: #808F5E;
+}
+
+/* This allows for the image to perfectly fit in the card and leave room for the text below */
+.book-card img {
+    width: 100%;
+    height: auto;
+    size: auto;
+}
+
+/* This allows for the image to perfectly fit in the card and leave room for the text below */
+.buy-btn {
+    background-color: #CBAE82;
+    padding: 10px;
+    cursor: pointer;
     width: 100%;
     height: auto;
 }
-
-.footer {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, .3);
-    padding: 10px;
+/* color darkens when cursor hovers over it */
+.buy-btn:hover {
+    background-color: #B08B57;
 }
 
-button {
-    text-align: center;
-    background-color: #666;
-    border: none;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 40px;
-    border-radius: 10px;
+/* creates the flex countainer for the buttons */
+.navbar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* The buttons are customized here */
+.navbar button {
+    background-color: #CBAE82;
     color: white;
-    font-size: 22px;
     cursor: pointer;
-    margin: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* When the mouse hovers over the button, the color darkens */
+.navbar button:hover {
+    background-color: #B08B57;
+}
+
+/* Customization of the search bar */
+#searchInput {
+    padding: 10px 50px;
+    margin-top: -42px;
+    margin-right: 80px;
+    float: right; /* after setting float to the right, it covered up the cart button, but I solved it by adding margin-right and changing it so that it looks nice next to the cart button */
+    font-size: 16px;
+    border: 1px solid; /* borderless doesn't look that good */
+}
+
+/* Customization of the sorting drop menu */
+#sortSelect {
+    padding: 10px;
+    margin-top: -42px;
+    float: left;  /* margin-left is not needed here unlike search bar, since it won't be covering up any buttons */
+    font-size: 16px;
+    border: 1px solid; /* borderless doesn't look that good */
+}
+
+/* This is placing and customizing the cart button */
+#cartButton {
+    padding: 10px;
+    margin-top: -42px;
+    float: right;
+    font-size: 16px;
+    border: solid 1px;
+    background-color: #CBAE82;
+}
+/* color darkens when cursor hovers over it */
+#cartButton:hover{
+    background-color: #B08B57;
+}
+
+/* creates the squarish block for the cart modal.*/
+.cart-modal {
+    position: fixed;
+    bottom: 500;
+    left: 700px;
+    width: 500px;
+    height: auto;
+    size: auto;
+    background-color: #808F5E;
+    display: none; /* The modal is set to be hidden by default unless triggered to appear by the cart button */
+    border: 1px solid;
+}
+/* padding the cart content so that the content can appear at a good place for when I add items to the cart */
+.cart-content {
+    padding: 90x;
+}
+
+/* added a 'x' at the top right of the cart, which the user can click to exit out of the cart. */
+.close-btn {
+    font-size: 28px;
+    cursor: pointer;
+    float: right;
+    margin-top: -23px;
+}
+
+/* self explanatory */
+.checkout-btn {
+    background-color: #CBAE82;
+    cursor: pointer;
+    margin-top: 250px;
+    padding: 20px 20px;
+    width: 100%;
+    border: 0.1px solid;
+}
+
+/* color darkens when cursor hovers over it */
+.checkout-btn:hover{
+    background-color: #B08B57;
 }

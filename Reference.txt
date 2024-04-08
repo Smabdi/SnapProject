@@ -1,0 +1,12 @@
+I value honesty a lot, so I am making this text file to give credit to the sources that have assisted me in making this website. I can 100% guarantee that 99% of this website was made by me, except the 1% of 'code' I needed to use.
+In addition, as I review my files, I will be leaving comments here and there for line(s) of codes I found on the internet that helped either explain things or solved problems for me.
+
+
+1. Amazon: I have used Amazon.com to find clear, well defined images of the books I was looking for. 
+2. Photoshop: I used photoshop to resize the images of the books to the specific size I wanted.
+3. Stackoverflow: I used stackoverflow to find help in some of the things I didn't know about javascript that I needed help with. 
+4. For CSS, I used the example css file and projects I worked on to help refresh my memory and use to help me. 
+5. I used dev.to to learn tips and tricks of html, javascript, and css. 
+6. I used a font called baskerville and I got it from google. With the help of W3schools, I learnt how to import it
+7. I used chatgpt purely for just helping me select the 70 books I have. The coding and css is from my knowledge, which involved refreshing my memory and learning new things here and there.
+8. Used the book logo from https://www.cleanpng.com/png-vector-graphics-book-stock-illustration-logo-resea-7183477/
