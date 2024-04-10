@@ -7,13 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Header -->
 <div class="header">
     <h1 class="welcome-header">Welcome to the Bookstore</h1>
-
-    <!-- buttons for the genres -->
+    <!-- I was unable to figure out how to put the logo image to the left while the 'Welcome to the Bookstore' text in the center, so i made a nav for it. -->
+    <nav id="logo"> 
+        <img src="images/logo.png" alt="Logo" style="width: 300px; height: auto;"> <!-- The book logo is from https://www.cleanpng.com/png-vector-graphics-book-stock-illustration-logo-resea-7183477/ -->
+    </nav>
+    <!-- buttons for the genres, search bar, sort bar, and cart button-->
     <nav class="navbar">
+        <select id="sortSelect" onchange="sortBooks()">
+        <option value="sorting">Sorting</option>
+        <option value="alphabetical">Alphabetical</option>
+        <option value="mostPopular">Most Popular</option>
+        <option value="leastPopular">Least Popular</option>
+        <option value="priceLowHigh">Price Low to High</option>
+        <option value="priceHighLow">Price High to Low</option>
+        </select>
         <button onclick="filterGenre('all')">All</button>
         <button onclick="filterGenre('fantasy')">Fantasy</button>
         <button onclick="filterGenre('historical')">Historical</button>
@@ -22,31 +31,12 @@
         <button onclick="filterGenre('romance')">Romance</button>
         <button onclick="filterGenre('sci-fi')">Sci-Fi</button>
         <button onclick="filterGenre('thriller')">Thriller</button>
+        <input type="text" id="searchInput" placeholder="Search for a book" onkeyup="searchBooks()">
+        <button id="cartButton" onclick="toggleCart()">Cart</button>
     </nav>
 
-    <!-- I was unable to figure out how to put the logo image to the left while the 'Welcome to the Bookstore' text in the center, so i made a nav for it. -->
-    <nav id="logo"> 
-        <img src="images/logo.png" alt="Logo" style="width: 300px; height: auto;"> <!-- The book logo is from https://www.cleanpng.com/png-vector-graphics-book-stock-illustration-logo-resea-7183477/ -->
-    </nav>
-
-    <!-- button to call for the cart modal -->
-    <button id="cartButton" onclick="toggleCart()">Cart</button>
-
-    <!-- Creates the search bar. To update the searching realtime as you type letter by letter, I found the information on W3Schools, as I wasn't sure what it was.  -->
-    <input type="text" id="searchInput" placeholder="Search for a book" onkeyup="searchBooks()">
-
-    <!-- This section defines the sorting drop down menu and the options in it -->
-    <select id="sortSelect" onchange="sortBooks()">
-    <option value="sorting">Sorting</option>
-    <option value="alphabetical">Alphabetical</option>
-    <option value="mostPopular">Most Popular</option>
-    <option value="leastPopular">Least Popular</option>
-    <option value="priceLowHigh">Price Low to High</option>
-    <option value="priceHighLow">Price High to Low</option>
-    </select>
 
 </div>
-
 <!-- This part is for the cart modal and anything related to the cart. -->
 <div id="cartModal" class="cart-modal">
     <div class="cart-content">
